@@ -41,4 +41,6 @@ int main(int argc, char **argv) {
   You should try and use functions to write your program.
 
   */
+  int facIn1 = 0
+  int facIn2 = 0
 }
