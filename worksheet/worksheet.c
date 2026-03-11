@@ -48,8 +48,8 @@ int find_max(int *arr, int n, int *index);
  * Example: add_values(3, 4) returns 7
  */
 int add_values(int a, int b) {
-  // TODO: Implement this function
-  return 0; // Replace this
+  int sum = a + b;
+  return sum; // Replace this
 }
 
 /**
@@ -68,7 +68,10 @@ int add_values(int a, int b) {
  *   // Now x == 10, y == 5
  */
 void swap_values(int *a, int *b) {
-  // TODO: Implement this function
+  int temp = 0;
+  temp = *a;
+  *a = *b;
+  *b = temp;
   // Hint: You'll need a temporary variable
 }
 
@@ -85,8 +88,12 @@ void swap_values(int *a, int *b) {
  * Example: sum_array([1,2,3,4,5], 5) returns 15
  */
 int sum_array(int *arr, int n) {
-  // TODO: Implement this function
-  return 0; // Replace this
+  int sum = 0;
+
+  for (int i = 0; i < n; i++) {
+    sum = sum + arr[i];
+  }
+  return sum; // Replace this
 }
 
 /**
@@ -106,7 +113,14 @@ int sum_array(int *arr, int n) {
  * Hint: Swap elements from both ends, moving toward the middle
  */
 void reverse_array(int *arr, int n) {
-  // TODO: Implement this function
+  int temp[n];
+  for (int i = 0; i < n; i++) {
+    temp[i] = arr[n - i - 1];
+  }
+        
+  for (int i = 0; i < n; i++) {
+    arr[i] = temp[i];
+  }
 }
 
 /**
@@ -123,9 +137,11 @@ void reverse_array(int *arr, int n) {
  * Example: average([1,2], 2) returns 1.5
  */
 double average(int *arr, int n) {
-  // TODO: Implement this function
+  double sum = sum_array(arr, n);
+  double average = sum / n;
+
   // Hint: Be careful with integer division!
-  return 0.0; // Replace this
+  return average; // Replace this
 }
 
 /**
@@ -147,9 +163,16 @@ double average(int *arr, int n) {
  *   // max == 9, idx == 3
  */
 int find_max(int *arr, int n, int *index) {
-  // TODO: Implement this function
+  int max = arr[0];
   *index = 0;
-  return 0; // Replace this
+  
+  for (int i = 0; i < n; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+      *index = i;
+    }
+  }
+  return max; // Replace this
 }
 
 /* ============================================================
